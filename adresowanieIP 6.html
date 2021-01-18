@@ -1,0 +1,73 @@
+<html><head></head><body style="background-color: #8FB5A4; color: #000000"><doctype html="">
+<meta charset="UTF-8">
+
+    
+    <title>
+   Adresowanie IPv6
+    </title>
+     
+
+     <!--]>-->
+<div style="margin:0 20% !important; text-align:center !important;font-size:16px  !important;font-family:arial  !important;background-color:black  !important;color:white  !important">Ta strona jest hostowana za darmo przez <a style="color:grey" rel="nofollow" href="https://www.cba.pl/">cba.pl</a>. Jesteś jej właścicielem? Możesz usunąć tą wiadomość i otrzymać wiele dodatkowych możliwości, ulepszając hosting do PRO lub VIP za jedyne 0.83 zł!<br> Chcesz wesprzeć tę stronę? <a style="color:grey" rel="nofollow" href="https://www.cba.pl/pl/donate/bpl.cba.pl">Kliknij tutaj</a> i wykup plan hostingowy!</div>
+	 <h1>Adresowanie IPv6</h1>
+<h3>
+IPv6 (ang. Internet Protocol version 6) – protokół komunikacyjny, będący następcą protokołu IPv4, 
+do którego opracowania przyczynił się w głównej mierze problem małej, kończącej się liczby adresów IPv4. 
+Podstawowymi zadaniami nowej wersji protokołu jest zwiększenie przestrzeni dostępnych adresów poprzez zwiększenie długości adresu z 32 bitów do 128 bitów, 
+uproszczenie nagłówka protokołu oraz zapewnienie jego elastyczności poprzez wprowadzenie rozszerzeń, a także wprowadzenie wsparcia dla klas usług, 
+uwierzytelniania oraz spójności danych. Protokół jest znany także jako IP Next Generation oraz IPng</h3>
+<h3>Podstawowy nagłówek protokołu składa się z następujących pól:</h3>
+
+<li>Wersja (4 bity) – definiująca wersję protokołu, w przypadku IPv6 pole to zawiera wartość 6 (bitowo 0110)</li>
+<li>Klasa ruchu (8 bitów) – określa sposób w jaki ma zostać potraktowany pakiet danych. W poprzedniej wersji protokołu pole to nazywało się Type of Service, 
+jednak ze względu na to, że w IPv6 stosowane są inne mechanizmy priorytetowania danych, nazwę tego pola zmieniono</li>
+<li>Etykieta przepływu (20 bitów) – pomagające odróżnić pakiety, które wymagają takiego samego traktowania (ich pole klasy ruchu ma tę samą wartość)</li>
+<li>Długość danych (16 bitów) – wielkość pakietu, nie wliczając długości podstawowego nagłówka (wliczając jednak nagłówki rozszerzające)</li>
+<li>Następny nagłówek (8 bitów) – identyfikuje typ następnego nagłówka, pozwalając określić czy jest to nagłówek rozszerzający czy nagłówek warstwy wyższej. W przypadku tego drugiego, wartość pola jest identyczna z wartością pola w protokole IPv4</li>
+<li>Limit przeskoków (8 bitów) – określa ilość węzłów, po odwiedzeniu których pakiet zostaje porzucony. W poprzedniej wersji protokołu pole to nosiło nazwę time to live i zawierało liczbę skoków, która była zmniejszana przez każdy odwiedzony węzeł</li>
+<li>Adres źródłowy (128 bitów) – adres węzła, który wysłał pakiet</li>
+<li>Adres docelowy (128 bitów) – adres węzła do którego adresowany jest pakiet</li>
+<center>
+<img src="budowa.jpg">
+
+<img src="tabelaip6.jpg">
+	<!--]--><div style="text-align:center;font-size:11px" class="cbalink"><script src="//a5.cba.pl/r1.js"></script><a href="https://www.cba.pl/" title="darmowy hosting">Darmowy hosting</a> CBA.PL | <a href="https://www.mintme.com" title="crowdfunding">Crowdfunding</a> MINTME.COM<br><br></div>
+<div class="cumf_bt_form_wrapper" style="display:none">
+<form id="contact_us_mail_feedback" action="/oldTi9QvqM6ytokU9Q8ylQq" method="post">
+    <fieldset>
+        <!-- Form Name -->
+        <legend>Contact Us</legend>
+        <!-- Text input-->
+        <div class="cumf_bt_form-group">
+            <label class="col-md-4 cumf_bt_control-label" for="cumf_bt_name">name</label>
+            <div class="col-md-4">
+                <input id="cumf_bt_name" name="cumf_bt_name" type="text" placeholder="your name" class="cumf_bt_form-control cumf_bt_input-md
+" required="1">
+                <span class="cumf_bt_help-block">Please enter your name</span>
+            </div>
+        </div>
+        <!-- Text input-->
+        <div class="cumf_bt_form-group">
+            <label class="col-md-4 cumf_bt_control-label" for="cumf_bt_email">your email</label>
+            <div class="col-md-4">
+                <input id="cumf_bt_email" name="cumf_bt_email" type="text" placeholder="enter your email" class="cumf_bt_form-control cumf_bt
+_input-md" required="1">
+                <span class="cumf_bt_help-block">please enter your email</span>
+            </div>
+        </div>
+        <!-- Textarea -->
+        <div class="cumf_bt_form-group">
+            <label class="col-md-4 cumf_bt_control-label" for="cumf_bt_message">your message</label>
+            <div class="col-md-4">
+                <textarea class="cumf_bt_form-control" id="cumf_bt_message" name="cumf_bt_message">Message goes here</textarea>
+            </div>
+        </div>
+        <input type="submit" id="cumf_bt_submit" value="Send">
+    </fieldset>
+</form>
+</div>
+
+
+
+<!-- cba </body><!-->
+</center></doctype></body></html>

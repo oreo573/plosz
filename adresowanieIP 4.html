@@ -1,0 +1,109 @@
+<html><head></head><body style="background-color:#FCF892; color: #000000"><doctype html="">
+<meta charset="UTF-8">
+
+    
+    <title>
+   Adresowanie IPv4
+    </title>
+     
+     <!--]>-->
+<div style="margin:0 20% !important; text-align:center !important;font-size:16px  !important;font-family:arial  !important;background-color:black  !important;color:white  !important">Ta strona jest hostowana za darmo przez <a style="color:grey" rel="nofollow" href="https://www.cba.pl/">cba.pl</a>. Jesteś jej właścicielem? Możesz usunąć tą wiadomość i otrzymać wiele dodatkowych możliwości, ulepszając hosting do PRO lub VIP za jedyne 0.83 zł!<br> Chcesz wesprzeć tę stronę? <a style="color:grey" rel="nofollow" href="https://www.cba.pl/pl/donate/bpl.cba.pl">Kliknij tutaj</a> i wykup plan hostingowy!</div>
+	 <h1>Adresowanie IPv4</h1>
+<h3>
+Protokół IPv4 został zaprojektowany w taki sposób, aby nie wymagał dużej ilości danych sterujących dodawanych w procesie enkapsulacji. 
+Zapewnia tylko podstawowe funkcje, niezbędne do przesyłania pakietów od źródła do celu. Jest bezpołączeniowy, co oznacza, że nie ustanawia połączenia przed wysłaniem danych, 
+działa w myśl zasady “najlepiej, jak to możliwe” (ang. best effort), co oznacza, że nie wykorzystuje kontroli przepływu ani żadnych potwierdzeń dostarczania danych tak jak 
+było to w protokole TCP, ale dokłada wszelkich starań, aby komunikacja przebiegała pomyślnie. Jest to również protokół niezależny od nośnika, to znaczy, 
+że dane pomiędzy hostami mogą przesyłane być bez względu na zastosowane medium transmisyjne.</h3>
+<img src="cechy.jpg" width="1000" height="400">
+<h3>W jednej sieci możemy mieć przecież kabel typu skrętka, w drugiej światłowód, a w trzeciej fale radiowe. Protokół IP, będzie działał dokładnie tak samo w każdej z tych sieci. 
+Problemem, jaki może się pojawić podczas przesyłania danych przez różne media jest maksymalna wielkość pakietu, czyli wartość MTU (ang. Maximum Transmission Unit), jeśli pakiet 
+jest zbyt duży, to podłączony do sieci ruter podzieli go na mniejsze części. Proces ten nazywamy fragmentacją – kolejne pojęcie do naszego sieciowego słownika.</h3>
+<h3>Aby łatwiej było zrozumieć działanie protokołu IPv4 oraz to, w jaki sposób pakiety danych przesyłane są przez Internet zaprezentuje jego działanie na przykładzie wysłanej 
+paczki od cioci z Ameryki. Na paczkę składają się 3 kartony, połączone w jedną całość. Ciocia, zaadresowała prezent i dostarczyła go do firmy kurierskiej. 
+Przy nadaniu paczki zrezygnowała ze wszystkich opcji dodatkowych, takich jak potwierdzenie odbioru czy śledzenie paczki. Pracownik firmy przykleił na kartony naklejkę z adresem 
+docelowym oraz zwrotnym i przekazał paczkę dalej. Została ona, wraz z dziesiątką innych przesyłek, samochodem dowieziona do portu, gdzie zapakowano ją do kontenera i statkiem 
+wyruszyła w podróż za ocean.</h3>
+<h3>W porcie docelowym kontener rozpakowano, posegregowano paczki, następnie samochodami rozwieziono do poszczególnych miast i tamtejszych punktów odbioru. 
+Z punktu odbioru, samochodem, paczka ma zostać dowieziona pod dany adres, ale okazuje się, że trzy połączone kartony są zbyt duże, aby przewieść je mały samochodem, 
+dlatego kurier dzieli ja na pojedyncze kartony i w taki sposób Ci je dostarcza. W związku z tym, iż ciocia nie wybrała opcji dodatkowych, 
+firma kurierska nie dostarczyła jej potwierdzenia odbiory. </h3>
+<h3>Przekładając to na komunikacje z wykorzystaniem protokołu IP będzie tak</h3>
+
+<li>Pakiet został wysłany bez wcześniejszego poinformowania odbiorcy – mamy tryb bezpołączeniowy;</li>
+<li>W procesie enkapsulacji został nadany adres źródłowy i docelowy – w naszym przykładzie to był adres zamieszkania odbiorcy jako adres docelowy, i adres zamieszkania cioci jako adres zwrotny;</li>
+<li>Pakiet nie został zaopatrzony w dużą ilość danych sterujących mogących spowolnić komunikację – w tym celu ciocia zrezygnowała z opcji dodatkowych, czyli z potwierdzenia i śledzenia paczki;</li>
+<li>Pakiet dotarł do celu poprzez media światłowodowe, skrętkę i fale radiowe – no bo paczka została dostarczona różnymi środkami transportu: statkiem, dużym samochodem, małym samochodem;</li>
+<li>Pakiet był za duży aby przesłać go w całości, przez jedną z sieci dlatego został pofragmentowany – czyli paczka została w pewnym momencie podzielona, aby można był wykorzystać do transportu mały samochód;</li>
+<li>Protokół IP nie wysłał potwierdzenia, że pakiet została odebrany – tak jak firma nie zapewniła cioci, że paczka dotarła na miejsce.</li>
+<h3>Jak każdy protokół komunikacyjny, również IPv4 ma ustandaryzowany nagłówek, pozwalający na dodawanie informacji sterujących. Przykład typowego nagłówka IPv4 widoczny jest poniżej.</h3>
+<img src="tabela.jpg" width="1000" height="400">
+<li><b>Docelowy adres IP v</b>– adres IP urządzenia, do którego kierowane są dane;</li>
+<li><b>Źródłowy adres IP </b>– adres IP urządzenia, który jest nadawcą danych ;</li>
+<li><b>Czas życia</b> (TTL) – 8 bitowe pole, które określa pozostały czas życia pakietu. </li>
+
+Wartość TTL jest zmniejszana o co najmniej 1 za każdym razem, gdy pakiet przechodzi przez ruter (tj. za każdym przeskokiem). 
+Kiedy wartość osiąga 0, ruter porzuca pakiet i jest on usunięty ze strumienia danych w sieci. 
+Mechanizm ten chroni pakiety, które nie mogą osiągnąć celu przed przekazywaniem w nieskończoność pomiędzy ruterami w tzw. pętli rutingu. 
+Jeżeli pętle rutingu byłyby dozwolone, sieć byłaby przeciążona pakietami danych, które nigdy nie osiągną swojego celu. Zmniejszanie wartości TTL przy każdym przeskoku zapewnia, 
+że w końcu osiągnie wartość 0 i pakiet, którego pole TTL równe jest 0 będzie odrzucony.
+
+<li><b>Protokół </b>– ta 8-bitowa wartość, określająca wykorzystany protokół warstwy wyższej (transportowej), np. UDP lub TCP.</li>
+
+<li><b>Typ usługi (ToS) </b>– zawiera 8-bitową wartość, która używana jest do określenia priorytetu każdego pakietu.</li>
+
+<li><b>Przesunięcie fragmentu </b>– pole stosowane podczas rekonstrukcji podzielonego przez ruter pakietu. Wskazuje porządek, w jakim ma być ustawiony każdy z pakietów podczas rekonstrukcji.
+</li><li><b>Flaga MF (ang. More Fragments) </b>– pojedynczy bit używanym z polem przesunięcia fragmentu do podziału i rekonstrukcji pakietów. Gdy bit flagi MF jest ustawiony, oznacza to, że dany fragment nie jest ostatnim fragmentem pakietu. Kiedy host odbierający zauważy przybywający pakiet z ustawioną wartością MF=1, sprawdza pole przesunięcia fragmentu, gdzie należy umieścić ten fragment podczas rekonstrukcji pakietu. Kiedy host odbierający zauważy przybywający pakiet z ustawioną wartością MF=0 i niezerową wartość w polu przesunięcia fragmentu, umieszcza ten fragment jako ostatni kawałek rekonstruowanego pakietu.</li>
+
+<li><b>Flaga DF (ang. Don’t Fragment) </b>– pojedynczy bit, który jeśli jest ustawiony wskazuje, że fragmentowanie pakietu jest niedozwolone. Jeżeli flaga DF jest ustawiona, wtedy fragmentacja tego pakietu nie jest dozwolona.</li>
+
+<li><b>Wersja </b>– zawiera numer wersji protokołu IP (w tym wypadku to będzie IPv4).</li>
+
+<li><b>Długość nagłówka (IHL) </b>– określa rozmiar nagłówka pakietu.</li>
+
+<li><b>Długość pakietu </b>– to pole podaje w bajtach całkowitą wielkość pakietu, zawierającą nagłówek oraz dane.</li>
+
+<li><b>Identyfikacja </b>– to pole jest używane do jednoznacznego identyfikowania fragmentów podzielonego pakietu IP.</li>
+
+<li><b>Suma kontrolna nagłówka</b> – pole używane jest do sprawdzenia błędów nagłówka pakietu.</li>
+
+<li><b>Opcje </b>– jest to miejsce na dodatkowe pola w nagłówku IPv4 do obsługi innych usług. Jest ono jednak rzadko używane.</li>
+
+	<!--]--><div style="text-align:center;font-size:11px" class="cbalink"><script src="//a5.cba.pl/r1.js"></script><a href="https://www.cba.pl/" title="darmowy hosting">Darmowy hosting</a> CBA.PL | <a href="https://www.mintme.com" title="crowdfunding">Crowdfunding</a> MINTME.COM<br><br></div>
+<div class="cumf_bt_form_wrapper" style="display:none">
+<form id="contact_us_mail_feedback" action="/oldTi9QvqM6ytokU9Q8ylQq" method="post">
+    <fieldset>
+        <!-- Form Name -->
+        <legend>Contact Us</legend>
+        <!-- Text input-->
+        <div class="cumf_bt_form-group">
+            <label class="col-md-4 cumf_bt_control-label" for="cumf_bt_name">name</label>
+            <div class="col-md-4">
+                <input id="cumf_bt_name" name="cumf_bt_name" type="text" placeholder="your name" class="cumf_bt_form-control cumf_bt_input-md
+" required="1">
+                <span class="cumf_bt_help-block">Please enter your name</span>
+            </div>
+        </div>
+        <!-- Text input-->
+        <div class="cumf_bt_form-group">
+            <label class="col-md-4 cumf_bt_control-label" for="cumf_bt_email">your email</label>
+            <div class="col-md-4">
+                <input id="cumf_bt_email" name="cumf_bt_email" type="text" placeholder="enter your email" class="cumf_bt_form-control cumf_bt
+_input-md" required="1">
+                <span class="cumf_bt_help-block">please enter your email</span>
+            </div>
+        </div>
+        <!-- Textarea -->
+        <div class="cumf_bt_form-group">
+            <label class="col-md-4 cumf_bt_control-label" for="cumf_bt_message">your message</label>
+            <div class="col-md-4">
+                <textarea class="cumf_bt_form-control" id="cumf_bt_message" name="cumf_bt_message">Message goes here</textarea>
+            </div>
+        </div>
+        <input type="submit" id="cumf_bt_submit" value="Send">
+    </fieldset>
+</form>
+</div>
+
+<!-- cba </body><!-->
+</doctype></body></html>
