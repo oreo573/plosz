@@ -28,6 +28,23 @@ jednak ze względu na to, że w IPv6 stosowane są inne mechanizmy priorytetowan
 <li>Adres źródłowy (128 bitów) – adres węzła, który wysłał pakiet</li>
 <li>Adres docelowy (128 bitów) – adres węzła do którego adresowany jest pakiet</li>
 	</h2>
+	<h1>Adresy specjalne</h1>
+	<p>Następujące adresy i grupy adresów posiadają specjalne, zarezerwowane znaczenie:
+
+::/128 – adres nieokreślony (zawierający same zera).
+::1/128 – loopback, adres wskazujący na host lokalny.
+::/96 – pula zarezerwowana dla zachowania kompatybilności z protokołem IPv4 (pierwsze 96 bitów stanowią 0, pozostają 32 bity na adresy w formacie IPv4 np. ::192.0.2.128) wersja przestarzała.
+::ffff:0:0/64 – jw., ale pozwala wykorzystywać komunikację według protokołu IPv6 w sieci IPv4 (np. ::ffff:192.0.2.128).
+2001:7f8::/32 – pula zarezerwowana dla punktów wymiany ruchu, każdy z nich dostaje jedną podsieć /48.
+2001:db8::/32 – pula wykorzystywana w przykładach i dokumentacji – nigdy nie będzie wykorzystywana produkcyjnie.
+2002::/24 – adresy typu 6to4. Są to adresy wygenerowane na podstawie istniejących, publicznych adresów IPv4, dostępne dla każdego użytkownika.
+3ffe::/16 – adresy testowej sieci 6bone (adresy zostały wycofane 6 czerwca 2006 w związku z zakończeniem działania 6bone).
+fc00::/7 – pula lokalnych unikatowych adresów IPv6 typu unicast (RFC 4193 ↓), będąca odpowiednikiem adresów prywatnych IPv4, choć zgodnie z nazwą, powinny być unikatowe na świecie.
+fe80::/10 – pula link-local określa adresy w obrębie jednego łącza fizycznego (np. segmentu sieci Ethernet). Pakiety z tej puli nie są przekazywane poza podsieć, jej działanie jest analogiczne do automatycznie konfigurowanych adresów z puli 169.254.0.0/16 w IPv4.
+fec0::/10 – pula site-local określa adresy w obrębie jednej lokalnej organizacji. Obecnie nie zaleca się wykorzystywania tej puli; przyszłe implementacje IPv6 nie będą musiały obsługiwać tej puli.
+ff00::/8 – pula multicastowa używana do komunikacji multicast.
+
+W protokole IPv6 nie występuje pojęcie komunikacji broadcastowej (dane rozsyłane do wszystkich węzłów w danej podsieci). Aby wysyłać dane do wielu odbiorców jednocześnie, należy korzystać z komunikacji multicastowej.</p>
 <center>
 <table align="right" border="1" cellpadding="3" cellspacing="1" class="wikitable">
 <caption>Opis pól nagłówka protokołu IPv6<sup id="cite_ref-IPv6_Essentials_5-1" class="reference"></sup>
