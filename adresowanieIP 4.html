@@ -39,32 +39,33 @@ firma kurierska nie dostarczyła jej potwierdzenia odbiory. </h3>
 <h3>Jak każdy protokół komunikacyjny, również IPv4 ma ustandaryzowany nagłówek, pozwalający na dodawanie informacji sterujących. Przykład typowego nagłówka IPv4 widoczny jest poniżej.</h3>
 <img src="tabela.jpg" width="1000" height="400">
 	<h3>
-<li><b>Docelowy adres IP v</b>– adres IP urządzenia, do którego kierowane są dane;</li>
-<li><b>Źródłowy adres IP </b>– adres IP urządzenia, który jest nadawcą danych ;</li>
-<li><b>Czas życia</b> (TTL) – 8 bitowe pole, które określa pozostały czas życia pakietu. </li>
+<li><b>Docelowy adres IP v</b>– adres IP urządzenia, do którego kierowane są dane</li><br>
+<li><b>Źródłowy adres IP </b>– adres IP urządzenia, który jest nadawcą danych </li><br>
+<li><b>Czas życia</b> (TTL) – 8 bitowe pole, które określa pozostały czas życia pakietu.</li><br>
 
 Wartość TTL jest zmniejszana o co najmniej 1 za każdym razem, gdy pakiet przechodzi przez ruter (tj. za każdym przeskokiem). 
 Kiedy wartość osiąga 0, ruter porzuca pakiet i jest on usunięty ze strumienia danych w sieci. 
 Mechanizm ten chroni pakiety, które nie mogą osiągnąć celu przed przekazywaniem w nieskończoność pomiędzy ruterami w tzw. pętli rutingu. 
 Jeżeli pętle rutingu byłyby dozwolone, sieć byłaby przeciążona pakietami danych, które nigdy nie osiągną swojego celu. Zmniejszanie wartości TTL przy każdym przeskoku zapewnia, 
-że w końcu osiągnie wartość 0 i pakiet, którego pole TTL równe jest 0 będzie odrzucony.
+że w końcu osiągnie wartość 0 i pakiet, którego pole TTL równe jest 0 będzie odrzucony.<br>
 
-<li><b>Protokół </b>– ta 8-bitowa wartość, określająca wykorzystany protokół warstwy wyższej (transportowej), np. UDP lub TCP.</li>
+<li><b>Protokół </b>– ta 8-bitowa wartość, określająca wykorzystany protokół warstwy wyższej (transportowej), np. UDP lub TCP.</li><br>
 
-<li><b>Typ usługi (ToS) </b>– zawiera 8-bitową wartość, która używana jest do określenia priorytetu każdego pakietu.</li>
+<li><b>Typ usługi (ToS) </b>– zawiera 8-bitową wartość, która używana jest do określenia priorytetu każdego pakietu.</li><br>
 
 <li><b>Przesunięcie fragmentu </b>– pole stosowane podczas rekonstrukcji podzielonego przez ruter pakietu. Wskazuje porządek, w jakim ma być ustawiony każdy z pakietów podczas rekonstrukcji.
-</li><li><b>Flaga MF (ang. More Fragments) </b>– pojedynczy bit używanym z polem przesunięcia fragmentu do podziału i rekonstrukcji pakietów. Gdy bit flagi MF jest ustawiony, oznacza to, że dany fragment nie jest ostatnim fragmentem pakietu. Kiedy host odbierający zauważy przybywający pakiet z ustawioną wartością MF=1, sprawdza pole przesunięcia fragmentu, gdzie należy umieścić ten fragment podczas rekonstrukcji pakietu. Kiedy host odbierający zauważy przybywający pakiet z ustawioną wartością MF=0 i niezerową wartość w polu przesunięcia fragmentu, umieszcza ten fragment jako ostatni kawałek rekonstruowanego pakietu.</li>
+</li><br><li><b>Flaga MF (ang. More Fragments) </b>– pojedynczy bit używanym z polem przesunięcia fragmentu do podziału i rekonstrukcji pakietów. Gdy bit flagi MF jest ustawiony, oznacza to, że dany fragment nie jest ostatnim fragmentem pakietu. Kiedy host odbierający zauważy przybywający pakiet z ustawioną wartością MF=1, sprawdza pole przesunięcia fragmentu, gdzie należy umieścić ten fragment podczas rekonstrukcji pakietu. Kiedy host odbierający zauważy przybywający pakiet z ustawioną wartością MF=0 i niezerową wartość w polu przesunięcia fragmentu, umieszcza ten fragment jako ostatni kawałek rekonstruowanego pakietu.</li><br>
+		
 
-<li><b>Flaga DF (ang. Don’t Fragment) </b>– pojedynczy bit, który jeśli jest ustawiony wskazuje, że fragmentowanie pakietu jest niedozwolone. Jeżeli flaga DF jest ustawiona, wtedy fragmentacja tego pakietu nie jest dozwolona.</li>
+<li><b>Flaga DF (ang. Don’t Fragment) </b>– pojedynczy bit, który jeśli jest ustawiony wskazuje, że fragmentowanie pakietu jest niedozwolone. Jeżeli flaga DF jest ustawiona, wtedy fragmentacja tego pakietu nie jest dozwolona.</li><br>
 
-<li><b>Wersja </b>– zawiera numer wersji protokołu IP (w tym wypadku to będzie IPv4).</li>
+<li><b>Wersja </b>– zawiera numer wersji protokołu IP (w tym wypadku to będzie IPv4).</li><br>
 
-<li><b>Długość nagłówka (IHL) </b>– określa rozmiar nagłówka pakietu.</li>
+<li><b>Długość nagłówka (IHL) </b>– określa rozmiar nagłówka pakietu.</li><br>
 
-<li><b>Długość pakietu </b>– to pole podaje w bajtach całkowitą wielkość pakietu, zawierającą nagłówek oraz dane.</li>
+<li><b>Długość pakietu </b>– to pole podaje w bajtach całkowitą wielkość pakietu, zawierającą nagłówek oraz dane.</li><br>
 
-<li><b>Identyfikacja </b>– to pole jest używane do jednoznacznego identyfikowania fragmentów podzielonego pakietu IP.</li>
+<li><b>Identyfikacja </b>– to pole jest używane do jednoznacznego identyfikowania fragmentów podzielonego pakietu IP.</li><br>
 
 <li><b>Suma kontrolna nagłówka</b> – pole używane jest do sprawdzenia błędów nagłówka pakietu.</li>
 
