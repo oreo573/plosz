@@ -10,14 +10,14 @@
 
     
 	 <h1>Adresowanie IPv6</h1>
-<h2>
+<h3>
 IPv6  protokół komunikacyjny, będący następcą protokołu IPv4, 
 do którego opracowania przyczynił się w głównej mierze problem małej i kończącej się liczby adresów IPv4. 
 Podstawowymi zadaniami nowej wersji protokołu jest zwiększenie przestrzeni dostępnych adresów poprzez zwiększenie długości adresu z 32 bitów do 128 bitów, 
 uproszczenie nagłówka protokołu oraz zapewnienie jego elastyczności poprzez wprowadzenie rozszerzeń, a także wprowadzenie wsparcia dla klas usług, 
-uwierzytelniania oraz spójności danych. Protokół jest znany także jako IP Next Generation oraz IPng</h2>
+uwierzytelniania oraz spójności danych. Protokół jest znany także jako IP Next Generation oraz IPng</h3>
 <h1>Podstawowy nagłówek protokołu składa się z następujących pól:</h1>
-<h2>
+<h3>
 <li>Wersja (4 bity) – definiująca wersję protokołu, w przypadku IPv6 pole to zawiera wartość 6 (bitowo 0110)</li>
 <li>Klasa ruchu (8 bitów) – określa sposób w jaki ma zostać potraktowany pakiet danych. W poprzedniej wersji protokołu pole to nazywało się Type of Service, 
 jednak ze względu na to, że w IPv6 stosowane są inne mechanizmy priorytetowania danych, nazwę tego pola zmieniono</li>
@@ -27,9 +27,9 @@ jednak ze względu na to, że w IPv6 stosowane są inne mechanizmy priorytetowan
 <li>Limit przeskoków (8 bitów) – określa ilość węzłów, po odwiedzeniu których pakiet zostaje porzucony. W poprzedniej wersji protokołu pole to nosiło nazwę time to live i zawierało liczbę skoków, która była zmniejszana przez każdy odwiedzony węzeł</li>
 <li>Adres źródłowy (128 bitów) – adres węzła, który wysłał pakiet</li>
 <li>Adres docelowy (128 bitów) – adres węzła do którego adresowany jest pakiet</li>
-	</h2>
+	</h3>
 	<h1>Adresy specjalne</h1>
-	<h2><p>Następujące adresy i grupy adresów posiadają specjalne, zarezerwowane znaczenie:
+	<h3><p>Następujące adresy i grupy adresów posiadają specjalne, zarezerwowane znaczenie:
 
 ::/128 – adres nieokreślony (zawierający same zera).
 ::1/128 – loopback, adres wskazujący na host lokalny.
@@ -45,16 +45,16 @@ fec0::/10 – pula site-local określa adresy w obrębie jednej lokalnej organiz
 ff00::/8 – pula multicastowa używana do komunikacji multicast.
 
 W protokole IPv6 nie występuje pojęcie komunikacji broadcastowej (dane rozsyłane do wszystkich węzłów w danej podsieci). Aby wysyłać dane do wielu odbiorców jednocześnie, należy korzystać z komunikacji multicastowej.</p>
-	</h2><center>
+	</h3><center>
 	<h1>Zakresy adresów</h1>
-	<h2>harakterystyczną cechą protokołu jest fakt, że zostały zdefiniowane zakresy adresów. W przypadku adresów unicastowych wyróżniane są następujące zakresy:
+	<h3>harakterystyczną cechą protokołu jest fakt, że zostały zdefiniowane zakresy adresów. W przypadku adresów unicastowych wyróżniane są następujące zakresy:
 
 adresy lokalne dla łącza (link-local address) – są to adresy wykorzystywane tylko do komunikacji w jednym segmencie sieci lokalnej lub przy połączeniu typu point-to-point. Routery nie przekazują pakietów z tego rodzaju adresem. Z puli pozostałych adresów wyróżniane są przez prefiks FE80::/10. Każdy interfejs musi mieć przydzielony co najmniej jeden adres lokalny dla łącza, nawet jeżeli posiada adres globalny lub unikatowy adres lokalny.
 unikatowe adresy lokalne (unique local address) – są to adresy będące odpowiednikami adresów prywatnych wykorzystywanych w protokole IPv4. Z puli pozostałych adresów wyróżniane są przez prefiks FC00::/7. Od adresów lokalnych łącza odróżnia je także prefiks routingu.
 adresy globalne (global unicast address) – widoczne w całym internecie, są odpowiednikami adresów publicznych stosowanych w IPv4; do adresów tego typu należą adresy nie wymienione w pozostałych punktach</h2>
 <table align="right" border="1" cellpadding="3" cellspacing="1" class="wikitable">
 <caption>Opis pól nagłówka protokołu IPv6<sup id="cite_ref-IPv6_Essentials_5-1" class="reference"></sup>
-</caption>
+	</caption></h3>
 <tbody><tr bgcolor="white">
 <th bgcolor="white">Bity
 </th>
