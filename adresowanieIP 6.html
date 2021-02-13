@@ -46,6 +46,12 @@ ff00::/8 – pula multicastowa używana do komunikacji multicast.
 
 W protokole IPv6 nie występuje pojęcie komunikacji broadcastowej (dane rozsyłane do wszystkich węzłów w danej podsieci). Aby wysyłać dane do wielu odbiorców jednocześnie, należy korzystać z komunikacji multicastowej.</p>
 	</h2><center>
+	<h1>Zakresy adresów</h1>
+	<h2>harakterystyczną cechą protokołu jest fakt, że zostały zdefiniowane zakresy adresów. W przypadku adresów unicastowych wyróżniane są następujące zakresy:
+
+adresy lokalne dla łącza (link-local address) – są to adresy wykorzystywane tylko do komunikacji w jednym segmencie sieci lokalnej lub przy połączeniu typu point-to-point. Routery nie przekazują pakietów z tego rodzaju adresem. Z puli pozostałych adresów wyróżniane są przez prefiks FE80::/10. Każdy interfejs musi mieć przydzielony co najmniej jeden adres lokalny dla łącza, nawet jeżeli posiada adres globalny lub unikatowy adres lokalny.
+unikatowe adresy lokalne (unique local address) – są to adresy będące odpowiednikami adresów prywatnych wykorzystywanych w protokole IPv4. Z puli pozostałych adresów wyróżniane są przez prefiks FC00::/7. Od adresów lokalnych łącza odróżnia je także prefiks routingu.
+adresy globalne (global unicast address) – widoczne w całym internecie, są odpowiednikami adresów publicznych stosowanych w IPv4; do adresów tego typu należą adresy nie wymienione w pozostałych punktach</h2>
 <table align="right" border="1" cellpadding="3" cellspacing="1" class="wikitable">
 <caption>Opis pól nagłówka protokołu IPv6<sup id="cite_ref-IPv6_Essentials_5-1" class="reference"></sup>
 </caption>
