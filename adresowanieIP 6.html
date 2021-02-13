@@ -30,6 +30,86 @@ jednak ze względu na to, że w IPv6 stosowane są inne mechanizmy priorytetowan
 <center>
 <img src="budowa.jpg">
 
-<img src="tabelaip6.jpg">
+<table border>
+
+<tbody><tr bgcolor="#B3B7FF">
+<th>
+</th>
+<th>IPv4
+</th>
+<th>IPv6
+</th></tr>
+<tr>
+<th>długość adresów
+</th>
+<td>32 bity</td>
+<td>128 bitów
+</td></tr>
+<tr>
+<th>wsparcie dla IPsec
+</th>
+<td>implementacja zewnętrzna</td>
+<td>implementacja rodzima
+</td></tr>
+<tr>
+<th>identyfikacja ruchu dla QoS
+</th>
+<td>tak: pole ToS</td>
+<td>tak: pole  Flow Label
+</td></tr>
+<tr>
+<th>fragmentacja
+</th>
+<td>przez nadającego routery</td>
+<td>jedynie przez nadającego hosta
+</td></tr>
+<tr>
+<th>suma kontrolna w nagłówku
+</th>
+<td>obecna</td>
+<td>brak
+</td></tr>
+<tr>
+<th>opcje
+</th>
+<td>w nagłówku</td>
+<td>przeniesione do nagłówków dodatkowych
+</td></tr>
+<tr>
+<th>ramki zgłoszeń
+</th>
+<td><a ARP</td>
+<td>wielopoziomowe wiadomości typu Neighbor Solicitation, brak ARP
+</td></tr>
+<tr>
+<th>zarządzania grupami multicastowymi
+</th>
+<td>IGMP</td>
+<td>MLD
+</td></tr>
+<tr>
+<th>protokół komunikatów kontrolnych
+</th>
+<td>CMP</td>
+<td>ICMPv6 wymagany
+</td></tr>
+<tr>
+<th>adresy transmisji
+</th>
+<td>do wysyłania danych do wszystkich węzłów w podsieci</td>
+<td>zastąpione przez grupowy adres typu link-local, brak ruchu typu broadcast
+</td></tr>
+<tr>
+<th>przydzielanie adresu
+</th>
+<td>wymagana konfiguracja ręczna, przez  DHCP lub APIPA</td>
+<td>nie wymaga konfiguracji ręcznej ani DHCP, konfiguracja przez ogłoszenia Router Discovery i Neighbor Solicitation
+</td></tr>
+<tr>
+<th>mapowanie nazw hostów w DNS
+</th>
+<td>używa rekordów <i>A</i> oraz <i>PTR</i> w domenie IN-ADDR.ARPA</td>
+<td>używa rekordów <i>AAAA</i> oraz <i>PTR</i> w domenie IP6.ARPA
+</td></tr></tbody></table>
 
 </center></doctype></body></html>
